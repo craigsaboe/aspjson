@@ -1,38 +1,35 @@
-#summary One-sentence summary of this page.
+#summary Self Primitive Datatypes.
 
-= Samples =
-
-== Basics ==
-=== Self Primitive Datatypes===
-numbers:
+= Self Primitive Datatypes=
+===numbers===
 {{{
 <!--include file="JSON_lastest.asp"-->
 <%
 Response.Write toJSON(1989)
 %>
 }}}
-strings:
+===strings===
 {{{
 <!--include file="JSON_lastest.asp"-->
 <%
 Response.Write toJSON("やあ")
 %>
 }}}
-date & times:
+===date & times===
 {{{
 <!--include file="JSON_lastest.asp"-->
 <%
 Response.Write toJSON(Now())
 %>
 }}}
-single dimension arrays:
+===single dimension arrays===
 {{{
 <!--include file="JSON_lastest.asp"-->
 <%
 Response.Write toJSON(Array("a","l","i"))
 %>
 }}}
-multi dimension arrays:
+===multi dimension arrays===
 {{{
 <!--include file="JSON_lastest.asp"-->
 <%
