@@ -1,0 +1,40 @@
+#summary BaseClass Members
+
+== Properties ==
+
+object[.Pair]( _( Null | "property" )_ )
+description: manuplate data on jsObject or jsArray, Null mean is auto unique variables 
+type: any primitive value or json data structure object
+
+object.Collection
+description: raw data structure
+type: Scripting.Dictionary
+
+object.Count
+description: contains new auto unique variable, is have a only number
+type: Number
+
+object.QuotedVars
+description: variable warp quotes
+type: Boolean
+
+object.Kind
+description: conversion type definition, this's for object or array 
+type: Number (contains JSON_OBJECT or JSON_ARRAY)
+
+object.jsString
+description: convert and return JSON data
+type: String
+== Methods ==
+
+object.Clean
+description: remove all items in data structure
+return: none
+
+object.Remove(_Item_)
+description: remove only selected item in data structure
+return: none
+
+object.Flush
+description: convert and send JSON data to output
+type: none
