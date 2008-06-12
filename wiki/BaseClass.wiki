@@ -2,7 +2,7 @@
 
 == Properties ==
 
-object[.Pair]( _( Null | "property" )_ )
+object[.Pair]( ( Null | "property" ) )
 description: manuplate data on jsObject or jsArray, Null mean is auto unique variables 
 type: any primitive value or json data structure object
 
