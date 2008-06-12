@@ -3,7 +3,7 @@
 == Properties ==
 
 {{{
-object[.Pair]( _(_ _Null_ _|_ _"property"_ _)_ )
+object[.Pair]( ( Null | "property" ) )
 }}}
 description: manuplate data on jsObject or jsArray, Null mean is auto unique variables 
 type: any primitive value or json data structure object
@@ -39,7 +39,7 @@ object.Clean
 description: remove all items in data structure
 return: none
 {{{
-object.Remove(_Item_)
+object.Remove(Item)
 }}}
 description: remove only selected item in data structure
 return: none
