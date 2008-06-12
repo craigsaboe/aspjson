@@ -1,13 +1,77 @@
 #summary JSON Objects data structure.
+=Definitions=
+== object object ==
+{{{
+<!--include file="JSON_lastest.asp"-->
+<%
+Dim o
+Set o = jsObject()
 
-= Introduction =
+o("name") = "tuğ"
+o("name") = o("name") & "rul"
 
-Add your content here.
+o("surname") = "topuz"
+o("lucky_numbers") = Array(1,2,6,7,9)
+o("sample_date") = #05.10.2003#
+o(Null) = "nasrettin hoca" ' auto variables
 
+o.Flush
+%>
+}}}
+== array object ==
+{{{
+<!--include file="JSON_lastest.asp"-->
+<%
+Dim a
+Set a = jsArray()
 
-= Details =
+a(Null) = 2
+a(Null) = 4
+a(Null) = 6
+a(Null) = 8
 
-Add your content here.  Format your content with:
-  * Text in *bold* or _italic_
-  * Headings, paragraphs, and lists
-  * Automatic links to other wiki pages
+a.Flush
+%>
+}}}
+= Conversions =
+== jsArray to jsObject ==
+{{{
+<!--include file="JSON_lastest.asp"-->
+<%
+Dim a
+Set a = jsArray()
+
+a(Null) = 2
+a(Null) = 4
+a(Null) = 6
+a(Null) = 8
+
+a.Flush
+
+a.Kind = JSON_OBJECT
+
+a.Flush
+%>
+}}}
+== jsObject to jsArray ==
+{{{
+<!--include file="JSON_lastest.asp"-->
+<%
+Dim o
+Set o = jsObject()
+
+o("name") = "tuğ"
+o("name") = o("name") & "rul"
+
+o("surname") = "topuz"
+o("lucky_numbers") = Array(1,2,6,7,9)
+o("sample_date") = #05.10.2003#
+o(Null) = "nasrettin hoca" ' auto variables
+
+o.Flush
+
+o.Kind = JSON_ARRAY
+
+o.Flush
+%>
+}}}
