@@ -75,3 +75,23 @@ o.Kind = JSON_ARRAY
 o.Flush
 %>
 }}}
+= Block Structures =
+=== object samples ===
+{{{
+<!--include file="JSON_lastest.asp"-->
+<%
+Dim o
+Set o = jsObject()
+
+Set o("person") = jsObject()
+o("person")("name") = "Tuğrul"
+o("person")("surname") = "Topuz"
+
+Set o("equipment") = jsObject()
+o("equipment")("name") = "keyboard"
+o("equipment")("type") = "electronic"
+o("equipment")("buy_date") = #06.04.2003#
+
+o.Flush
+%>
+}}}
