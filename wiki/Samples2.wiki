@@ -76,7 +76,7 @@ o.Flush
 %>
 }}}
 = Block Structures =
-=== object samples ===
+== object sample ==
 {{{
 <!--include file="JSON_lastest.asp"-->
 <%
@@ -93,5 +93,49 @@ o("equipment")("type") = "electronic"
 o("equipment")("buy_date") = #06.04.2003#
 
 o.Flush
+%>
+}}}
+== array sample ==
+{{{
+<!--include file="JSON_lastest.asp"-->
+<%
+
+Dim a
+Set a = jsArray()
+
+Set a(Null) = jsArray()
+a(Null)(Null) = 0
+a(Null)(Null) = 2
+a(Null)(Null) = 4
+a(Null)(Null) = 6
+
+Set a(Null) = jsArray()
+a(Null)(Null) = 1
+a(Null)(Null) = 3
+a(Null)(Null) = 5
+a(Null)(Null) = 7
+
+a.Flush
+%>
+}}}
+== mixed sample ==
+{{{
+<!--include file="JSON_lastest.asp"-->
+<%
+
+Dim a
+Set a = jsArray()
+
+Sub AddMember(name, surname, birth)
+	Set a(Null) = jsObject()
+	a(Null)("name") = name
+	a(Null)("surname") = surname
+	a(Null)("birth") = birth
+End Sub
+
+AddMember("tuğrul", "topuz", #10.09.1989#)
+AddMember("cin", "ali", #01.01.1968#)
+
+a.Flush
 %>
 }}}
