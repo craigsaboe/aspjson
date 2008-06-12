@@ -13,7 +13,7 @@ o("name") = o("name") & "rul"
 o("surname") = "topuz"
 o("lucky_numbers") = Array(1,2,6,7,9)
 o("sample_date") = #05.10.2003#
-o(Null) = "nasrettin hoca" ' auto variables
+o(Null) = "nasrettin hoca"
 
 o.Flush
 %>
@@ -66,7 +66,7 @@ o("name") = o("name") & "rul"
 o("surname") = "topuz"
 o("lucky_numbers") = Array(1,2,6,7,9)
 o("sample_date") = #05.10.2003#
-o(Null) = "nasrettin hoca" ' auto variables
+o(Null) = "nasrettin hoca"
 
 o.Flush
 
