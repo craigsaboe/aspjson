@@ -12,6 +12,7 @@ If you use an auto rename it includes a new auto value.
 
 {{{
 <!--#include file="JSON_lastest.asp"-->
+<%
 Dim o
 Set o = jsObject()
 
@@ -21,4 +22,5 @@ o(Null) = 43
 Response.Write o.Count
 
 o.Flush
+%>
 }}}
