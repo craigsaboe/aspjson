@@ -1,0 +1,21 @@
+#summary jsCore Flush subroutine.
+#labels Phase-Implementation
+
+*syntax:*
+{{{
+object.Flush
+}}}
+
+JSON string send to standart output.
+
+== Samples ==
+
+{{{
+<!--#include file="JSON_lastest.asp"-->
+<%
+Dim o
+Set o = jsObject()
+o("build") = "2.0.2"
+o.Flush
+%>
+}}}
