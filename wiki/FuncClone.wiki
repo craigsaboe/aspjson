@@ -1,0 +1,8 @@
+#summary jsCore Clone function.
+#labels Phase-Implementation
+
+*syntax:*
+{{{
+object.Clone ' [jsCore]
+}}}
+Clone new object from jsCore object.
