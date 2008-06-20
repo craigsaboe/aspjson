@@ -1,6 +1,7 @@
 #summary jsCore Count property.
 #labels Phase-Implementation
 
+*syntax:*
 {{{
 object.Count ' [Number]
 }}}
