@@ -1,0 +1,44 @@
+#summary External toJSON function.
+#labels Phase-Implementation
+
+*syntax:*
+{{{
+toJSON(variant) ' [string]
+}}}
+
+All primitive datatypes and jsCore object convert to JSON string.
+
+== Samples ==
+
+{{{
+<!--#include file="JSON_lastest.asp"-->
+<%
+Response.Write toJSON("やあ")
+%>
+}}}
+
+{{{
+<!--#include file="JSON_lastest.asp"-->
+<%
+Response.Write toJSON("hello")
+%>
+}}}
+
+{{{
+<!--#include file="JSON_lastest.asp"-->
+<%
+Response.Write toJSON(Array("cin", "ali", "çarpar", True))
+%>
+}}}
+
+{{{
+<!--#include file="JSON_lastest.asp"-->
+<%
+Dim o
+Set o = jsObject()
+o("name") = "tuğrul"
+o("surname") = "topuz"
+
+Response.Write toJSON(o)
+%>
+}}}
