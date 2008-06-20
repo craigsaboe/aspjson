@@ -1,0 +1,10 @@
+#summary External jsObject function.
+#labels Phase-Implementation
+
+*syntax:*
+
+{{{
+Set ref = jsObject() ' [jsCore]
+}}}
+
+Return reference to jsCore object. Kind property have a JSON_OBJECT value.
