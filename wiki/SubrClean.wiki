@@ -5,7 +5,7 @@
 {{{
 object.Clean
 }}}
-Remove all contends in jsObject or jsArray.
+Remove all contents in jsObject or jsArray.
 
 == Samples ==
 {{{
