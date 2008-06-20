@@ -6,3 +6,20 @@
 object.Clone ' [jsCore]
 }}}
 Clone new object from jsCore object.
+
+== Samples ==
+{{{
+<!--#include file="JSON_lastest.asp"-->
+<%
+Dim o, p
+
+Set o = jsObject()
+o("name") = "tuğrul"
+o("surname") = "topuz"
+o.Flush
+
+Set p = o.Clone
+p("name") = "threedot"
+p.Flush
+%>
+}}}
