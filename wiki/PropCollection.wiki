@@ -12,6 +12,7 @@ This with speciality the object could iterate.
 === Iterate & Process Primitive Types ===
 {{{
 <!--#include file="JSON_lastest.asp"-->
+<%
 Dim m, i
 Set m = jsObject()
 m("name") = "tuğrul"
@@ -20,10 +21,12 @@ m("surname") = "topuz"
 For Each i In m.Collection
 	Response.Write i & " : " & m(i) & vbCrLf
 Next
+%>
 }}}
 === Iterate & Process jsCore based object ===
 {{{
 <!--#include file="JSON_lastest.asp"-->
+<%
 Dim m, i
 Set m = jsArray()
 
@@ -40,4 +43,5 @@ AddUser "cin", "ali"
 For Each i In m.Collection
 	m(i).Flush
 Next
+%>
 }}}
