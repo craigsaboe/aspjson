@@ -1,0 +1,26 @@
+#summary jsCore Remove subroutine.
+#labels Phase-Implementation
+
+*syntax:*
+{{{
+object.Remove("property")
+}}}
+
+Remove defined property.
+
+== Samples ==
+
+{{{
+<!--#include file="JSON_release.asp"-->
+<%
+Dim o
+Set o = jsObject()
+
+o("name") = "tuğrul"
+o("surname") = "topuz"
+
+o.Flush
+o.Remove("surname")
+o.Flush
+%>
+}}}
