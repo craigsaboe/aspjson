@@ -17,6 +17,5 @@ o(Null) = "ali"
 Response.Write o.Count
 o(Null) = 43
 Response.Write o.Count
-
 o.Flush
 }}}
