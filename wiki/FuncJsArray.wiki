@@ -1,0 +1,10 @@
+#summary External jsArray function.
+#labels Phase-Implementation
+
+*syntax:*
+
+{{{
+Set ref = jsArray() ' [jsCore]
+}}}
+
+Return reference to jsCore object. Kind property have a JSON_ARRAY value.
