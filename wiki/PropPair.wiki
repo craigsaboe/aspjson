@@ -3,10 +3,10 @@
 
 *syntax:*
 {{{
-object.Pair("property") ' [variant]
-object.Pair(Null) ' [variant]
-object("property") ' [variant]
-object(Null) ' [variant]
+object.Pair("property")
+object.Pair(Null)
+object("property")
+object(Null)
 }}}
 
 Manuplate data structure on the jsCore object. If property have a `Null` value then taken a autoproperty. Autoproperties contain a ordered numbers.
