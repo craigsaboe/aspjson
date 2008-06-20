@@ -1,0 +1,25 @@
+#summary jsCore jsString property.
+#labels Phase-Implementation
+
+*syntax:*
+{{{
+object.jsString ' [string]
+}}}
+
+Return JSON string.
+
+== Samples ==
+{{{
+<!--#include file="JSON_lastest.asp"-->
+<%
+Dim o
+Set o = jsArray()
+o(Null) = 0
+o(Null) = 2
+o(Null) = 4
+o(Null) = 6
+o(Null) = 8
+
+Response.Write "this is JSON: " & o.jsString
+%>
+}}}
