@@ -1,0 +1,22 @@
+#summary jsCore Count property.
+#labels Phase-Implementation
+
+{{{
+object.Count ' [Number]
+}}}
+
+If you use an auto rename it includes a new auto value.
+
+== Samples ==
+
+{{{
+<!--#include file="JSON_lastest.asp"-->
+Dim o
+Set o = jsObject()
+o(Null) = "ali"
+Response.Write o.Count
+o(Null) = 43
+Response.Write o.Count
+
+o.Flush
+}}}
