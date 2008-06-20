@@ -3,7 +3,7 @@
 
 *Syntax:*
 {{{
-object.Collection ' Scripting.Dictionary
+object.Collection ' [Scripting.Dictionary]
 }}}
 
 This with speciality the object could iterate.
