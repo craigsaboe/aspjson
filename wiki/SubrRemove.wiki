@@ -11,7 +11,7 @@ Remove defined property.
 == Samples ==
 
 {{{
-<!--#include file="JSON_release.asp"-->
+<!--#include file="JSON_latest.asp"-->
 <%
 Dim o
 Set o = jsObject()
