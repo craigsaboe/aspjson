@@ -12,7 +12,7 @@ JSON string have a quoted variables for json objects. Many difference EcmaScript
 == Samples ==
 
 {{{
-<!--#include file="JSON_lastest.asp"-->
+<!--#include file="JSON_latest.asp"-->
 <%
 Dim car
 Set car = jsObject()
