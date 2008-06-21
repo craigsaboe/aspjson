@@ -9,7 +9,7 @@ Clone new object from jsCore object.
 
 == Samples ==
 {{{
-<!--#include file="JSON_lastest.asp"-->
+<!--#include file="JSON_latest.asp"-->
 <%
 Dim o, p
 
