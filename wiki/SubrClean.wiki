@@ -9,6 +9,7 @@ Remove all contents in jsObject or jsArray.
 
 == Samples ==
 {{{
+<!--#include file="JSON_latest.asp"-->
 Dim o
 Set o = jsArray()
 
