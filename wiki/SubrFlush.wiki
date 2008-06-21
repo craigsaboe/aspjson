@@ -11,7 +11,7 @@ JSON string send to standart output.
 == Samples ==
 
 {{{
-<!--#include file="JSON_lastest.asp"-->
+<!--#include file="JSON_latest.asp"-->
 <%
 Dim o
 Set o = jsObject()
