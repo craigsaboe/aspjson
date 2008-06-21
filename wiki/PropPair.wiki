@@ -13,7 +13,7 @@ Manuplate data structure on the jsCore object. If property have a `Null` value t
 
 == Samples ==
 {{{
-<!--#include file="JSON_lastest.asp"-->
+<!--#include file="JSON_latest.asp"-->
 <%
 Dim n
 Set n = jsObject()
@@ -28,7 +28,7 @@ n.Flush
 }}}
 === Value contains a jsCore objects (jsArray, jsObject) ===
 {{{
-<!--#include file="JSON_lastest.asp"-->
+<!--#include file="JSON_latest.asp"-->
 <%
 Dim m, i
 Set m = jsArray()
