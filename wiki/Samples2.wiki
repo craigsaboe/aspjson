@@ -1,8 +1,9 @@
 #summary JSON Objects data structure.
+#labels Phase-Implementation
 =Definitions=
 == object object ==
 {{{
-<!--include file="JSON_lastest.asp"-->
+<!--include file="JSON_latest.asp"-->
 <%
 Dim o
 Set o = jsObject()
@@ -20,7 +21,7 @@ o.Flush
 }}}
 == array object ==
 {{{
-<!--include file="JSON_lastest.asp"-->
+<!--include file="JSON_latest.asp"-->
 <%
 Dim a
 Set a = jsArray()
@@ -36,7 +37,7 @@ a.Flush
 = Conversions =
 == jsArray to jsObject ==
 {{{
-<!--include file="JSON_lastest.asp"-->
+<!--include file="JSON_latest.asp"-->
 <%
 Dim a
 Set a = jsArray()
@@ -55,7 +56,7 @@ a.Flush
 }}}
 == jsObject to jsArray ==
 {{{
-<!--include file="JSON_lastest.asp"-->
+<!--include file="JSON_latest.asp"-->
 <%
 Dim o
 Set o = jsObject()
@@ -78,7 +79,7 @@ o.Flush
 = Block Structures =
 == object sample ==
 {{{
-<!--include file="JSON_lastest.asp"-->
+<!--include file="JSON_latest.asp"-->
 <%
 Dim o
 Set o = jsObject()
@@ -97,7 +98,7 @@ o.Flush
 }}}
 == array sample ==
 {{{
-<!--include file="JSON_lastest.asp"-->
+<!--include file="JSON_latest.asp"-->
 <%
 
 Dim a
@@ -120,7 +121,7 @@ a.Flush
 }}}
 == mixed sample ==
 {{{
-<!--include file="JSON_lastest.asp"-->
+<!--include file="JSON_latest.asp"-->
 <%
 
 Dim a
