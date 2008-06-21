@@ -10,7 +10,7 @@ Return JSON string.
 
 == Samples ==
 {{{
-<!--#include file="JSON_lastest.asp"-->
+<!--#include file="JSON_latest.asp"-->
 <%
 Dim o
 Set o = jsArray()
