@@ -11,7 +11,7 @@ This have a only JSON_OBJECT or JSON_ARRAY values. If a defined with jsObject() 
 == Samples ==
 Convert to jsObject from jsArray fastly.
 {{{
-<!--#include file="JSON_lastest.asp"-->
+<!--#include file="JSON_latest.asp"-->
 <%
 Dim n
 Set n = jsObject()
