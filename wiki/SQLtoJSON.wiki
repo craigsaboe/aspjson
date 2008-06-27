@@ -1,7 +1,7 @@
 #summary sample function for a SQL queries
 
 {{{
-<!--include file="JSON_latest.asp"-->
+<!--#include file="JSON_latest.asp"-->
 <%
 Function QueryToJSON(dbc, sql)
 	Dim rs, jsa
