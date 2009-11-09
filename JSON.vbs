@@ -1,7 +1,7 @@
 
 '
-'	VBS JSON 2.0.2
-'	Copyright (c) 2008 Tuðrul Topuz
+'	VBS JSON 2.0.3
+'	Copyright (c) 2009 Tuðrul Topuz
 '	Under the MIT (MIT-LICENSE.txt) license.
 '
 
@@ -65,31 +65,36 @@ Class jsCore
 
 	' encoding
 	Function jsEncode(str)
-		Dim i, j, aL1, aL2, c, p
+		Dim charmap(127), haystack()
+		charmap(8)  = "\b"
+		charmap(9)  = "\t"
+		charmap(10) = "\n"
+		charmap(12) = "\f"
+		charmap(13) = "\r"
+		charmap(34) = "\"""
+		charmap(47) = "\/"
+		charmap(92) = "\\"
 
-		aL1 = Array(&h22, &h5C, &h2F, &h08, &h0C, &h0A, &h0D, &h09)
-		aL2 = Array(&h22, &h5C, &h2F, &h62, &h66, &h6E, &h72, &h74)
-		For i = 1 To Len(str)
-			p = True
-			c = Mid(str, i, 1)
-			For j = 0 To 7
-				If c = Chr(aL1(j)) Then
-					jsEncode = jsEncode & "\" & Chr(aL2(j))
-					p = False
-					Exit For
+		Dim strlen : strlen = Len(str) - 1
+		ReDim haystack(strlen)
+
+		Dim i, charcode
+		For i = 0 To strlen
+			haystack(i) = Mid(str, i + 1, 1)
+
+			charcode = AscW(haystack(i))
+			If charcode < 127 Then
+				If Not IsEmpty(charmap(charcode)) Then
+					haystack(i) = charmap(charcode)
+				ElseIf charcode < 32 Then
+					haystack(i) = "\u" & Right("000" & Hex(charcode), 4)
 				End If
-			Next
-
-			If p Then 
-				Dim a
-				a = AscW(c)
-				If a > 31 And a < 127 Then
-					jsEncode = jsEncode & c
-				ElseIf a > -1 Or a < 65535 Then
-					jsEncode = jsEncode & "\u" & String(4 - Len(Hex(a)), "0") & Hex(a)
-				End If 
+			Else
+				haystack(i) = "\u" & Right("000" & Hex(charcode), 4)
 			End If
 		Next
+
+		jsEncode = Join(haystack, "")
 	End Function
 
 	' converting
@@ -124,37 +129,36 @@ Class jsCore
 			Case 11
 				If vPair Then toJSON = "true" Else toJSON = "false"
 			Case 12, 8192, 8204
-				Dim sEB
-				toJSON = MultiArray(vPair, 1, "", sEB)
+				toJSON = RenderArray(vPair, 1, "")
 			Case Else
 				toJSON = Replace(vPair, ",", ".")
 		End select
 	End Function
 
-	Function MultiArray(aBD, iBC, sPS, ByRef sPT)	' Array BoDy, Integer BaseCount, String PoSition
-		Dim iDU, iDL, i	' Integer DimensionUBound, Integer DimensionLBound
-		On Error Resume Next
-		iDL = LBound(aBD, iBC)
-		iDU = UBound(aBD, iBC)
-		
-		Dim sPB1, sPB2	' String PointBuffer1, String PointBuffer2
-		If Err = 9 Then
-			sPB1 = sPT & sPS
-			For i = 1 To Len(sPB1)
-				If i <> 1 Then sPB2 = sPB2 & ","
-				sPB2 = sPB2 & Mid(sPB1, i, 1)
-			Next
-			MultiArray = MultiArray & toJSON(Eval("aBD(" & sPB2 & ")"))
-		Else
-			sPT = sPT & sPS
-			MultiArray = MultiArray & "["
-			For i = iDL To iDU
-				MultiArray = MultiArray & MultiArray(aBD, iBC + 1, i, sPT)
-				If i < iDU Then MultiArray = MultiArray & ","
-			Next
-			MultiArray = MultiArray & "]"
-			sPT = Left(sPT, iBC - 2)
-		End If
+	Function RenderArray(arr, depth, parent)
+		Dim first : first = LBound(arr, depth)
+		Dim last : last = UBound(arr, depth)
+
+		Dim index, rendered
+		Dim limiter : limiter = ","
+
+		RenderArray = "["
+		For index = first To last
+			If index = last Then
+				limiter = ""
+			End If 
+
+			On Error Resume Next
+			rendered = RenderArray(arr, depth + 1, parent & index & "," )
+
+			If Err = 9 Then
+				On Error GoTo 0
+				RenderArray = RenderArray & toJSON(Eval("arr(" & parent & index & ")")) & limiter
+			Else
+				RenderArray = RenderArray & rendered & "" & limiter
+			End If
+		Next
+		RenderArray = RenderArray & "]"
 	End Function
 
 	Public Property Get jsString
