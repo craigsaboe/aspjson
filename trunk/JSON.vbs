@@ -1,6 +1,6 @@
 
 '
-'	VBS JSON 2.0.0
+'	VBS JSON 2.0.2
 '	Copyright (c) 2008 Tuðrul Topuz
 '	Under the MIT (MIT-LICENSE.txt) license.
 '
@@ -83,7 +83,7 @@ Class jsCore
 			If p Then 
 				Dim a
 				a = AscW(c)
-				If a > 32 And a < 127 Then
+				If a > 31 And a < 127 Then
 					jsEncode = jsEncode & c
 				ElseIf a > -1 Or a < 65535 Then
 					jsEncode = jsEncode & "\u" & String(4 - Len(Hex(a)), "0") & Hex(a)
@@ -168,6 +168,25 @@ Class jsCore
 			WScript.Echo(jsString)
 		End If
 	End Sub
+
+	Public Function Clone
+		Set Clone = ColClone(Me)
+	End Function
+
+	Private Function ColClone(core)
+		Dim jsc, i
+		Set jsc = new jsCore
+		jsc.Kind = core.Kind
+		For Each i In core.Collection
+			If IsObject(core(i)) Then
+				Set jsc(i) = ColClone(core(i))
+			Else
+				jsc(i) = core(i)
+			End If
+		Next
+		Set ColClone = jsc
+	End Function
+
 End Class
 
 Function jsObject
