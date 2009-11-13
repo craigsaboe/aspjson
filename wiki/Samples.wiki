@@ -1,5 +1,5 @@
 #summary Self Primitive Datatypes.
-#labels Phase-Implementation
+#labels Phase-Implementation,Featured
 
 = Self Primitive Datatypes=
 ===numbers===
