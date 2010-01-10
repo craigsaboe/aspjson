@@ -40,7 +40,7 @@ Class jsCore
 	Public Property Set Pair(p, v)
 		If IsNull(p) Then p = Counter
 		If TypeName(v) <> "jsCore" Then
-			Err.Raise &hD, "class: class", "Tür uyumsuz: '" & TypeName(v) & "'"
+			Err.Raise &hD, "class: class", "Incompatible types: '" & TypeName(v) & "'"
 		End If
 		Set Collection(p) = v
 	End Property
@@ -82,7 +82,7 @@ Class jsCore
 		For i = 0 To strlen
 			haystack(i) = Mid(str, i + 1, 1)
 
-			charcode = AscW(haystack(i))
+			charcode = AscW(haystack(i)) And 65535
 			If charcode < 127 Then
 				If Not IsEmpty(charmap(charcode)) Then
 					haystack(i) = charmap(charcode)
@@ -100,11 +100,12 @@ Class jsCore
 	' converting
 	Public Function toJSON(vPair)
 		Select Case VarType(vPair)
+			Case 0	' Empty
+				toJSON = "null"
 			Case 1	' Null
 				toJSON = "null"
 			Case 7	' Date
-				' yaz saati problemi var
-				' jsValue = "new Date(" & Round((vVal - #01/01/1970 02:00#) * 86400000) & ")"
+				' toJSON = "new Date(" & (vPair - CDate(25569)) * 86400000 & ")"	' let in only utc time
 				toJSON = """" & CStr(vPair) & """"
 			Case 8	' String
 				toJSON = """" & jsEncode(vPair) & """"
