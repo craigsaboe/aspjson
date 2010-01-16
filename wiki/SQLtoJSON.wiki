@@ -4,7 +4,7 @@
 <!--#include file="JSON_latest.asp"-->
 <%
 Function QueryToJSON(dbc, sql)
-	Dim rs, jsa
+	Dim rs, jsa, col
 	Set rs = dbc.Execute(sql)
 	Set jsa = jsArray()
 	While Not (rs.EOF Or rs.BOF)
