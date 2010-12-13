@@ -7,7 +7,7 @@
 object.QuotedVars ' [Boolean]
 }}}
 
-JSON string have a quoted variables for json objects. Many difference EcmaScript compliant engine have a difference specifications. For example ActionScript. ActionScript fails process for quoted variables.
+JSON string have quoted variables for JSON objects. Various EcmaScript compliant engine have difference specifications, for instance ActionScript fails process for quoted variables.
 
 == Samples ==
 
