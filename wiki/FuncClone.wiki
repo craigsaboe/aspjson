@@ -5,7 +5,7 @@
 {{{
 object.Clone ' [jsCore]
 }}}
-Clone new object from jsCore object.
+`Clone()` method clones new object from `jsCore` object.
 
 == Samples ==
 {{{
