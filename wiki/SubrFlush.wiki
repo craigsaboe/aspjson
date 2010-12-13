@@ -6,7 +6,7 @@
 object.Flush
 }}}
 
-JSON string send to standart output.
+JSON string sends to standart output.
 
 == Samples ==
 
