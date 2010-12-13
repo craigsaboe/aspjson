@@ -6,7 +6,9 @@
 object.Kind ' [Number]
 }}}
 
-This have a only JSON_OBJECT or JSON_ARRAY values. If a defined with jsObject() function, have a JSON_OBJECT. If a defined with jsArray() function, have a JSON_ARRAY. 
+`Kind` property contains `JSON_OBJECT` or `JSON_ARRAY` values only. 
+
+If initialize an object with `jsObject()` method, that contains `JSON_OBJECT` const's value. If initialize an object with `jsArray()` method, that contains `JSON_ARRAY` const's value.
 
 == Samples ==
 Convert to jsObject from jsArray fastly.
