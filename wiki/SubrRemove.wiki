@@ -6,7 +6,7 @@
 object.Remove("property")
 }}}
 
-Remove defined property.
+`Remove()` method removes defined property.
 
 == Samples ==
 
