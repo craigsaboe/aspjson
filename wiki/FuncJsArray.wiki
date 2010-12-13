@@ -7,4 +7,4 @@
 Set ref = jsArray() ' [jsCore]
 }}}
 
-Return reference to jsCore object. Kind property have a JSON_ARRAY value.
+`jsArray()` method returns reference to jsCore object. Kind property have a JSON_ARRAY value.
