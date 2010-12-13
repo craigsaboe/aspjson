@@ -6,7 +6,7 @@
 object.Collection ' [Scripting.Dictionary]
 }}}
 
-This with speciality the object could iterate.
+`Collection` property returns reference to unwrapped property and value collection.
 
 == Samples ==
 === Iterate & Process Primitive Types ===
