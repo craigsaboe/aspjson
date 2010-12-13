@@ -6,7 +6,7 @@
 object.Count ' [Number]
 }}}
 
-If you use an auto rename it includes a new auto value.
+`Count` property contains object's items count.
 
 == Samples ==
 
