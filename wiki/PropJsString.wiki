@@ -6,7 +6,7 @@
 object.jsString ' [string]
 }}}
 
-Return JSON string.
+jsString property returns JSON string.
 
 == Samples ==
 {{{
