@@ -10,6 +10,7 @@ Remove all contents in jsObject or jsArray.
 == Samples ==
 {{{
 <!--#include file="JSON_latest.asp"-->
+<%
 Dim o
 Set o = jsArray()
 
@@ -28,4 +29,5 @@ o.Clean
 
 AddUser "barış", "manço"
 o.Flush
+%>
 }}}
