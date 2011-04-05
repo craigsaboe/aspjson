@@ -9,7 +9,7 @@ object("property")
 object(Null)
 }}}
 
-`Pair()` method manuplate data structure on the jsCore object. If property have a `Null` value then taken an autoproperty. Autoproperties contain an ordered numbers.
+`Pair()` method manuplates data structure on the jsCore object. If property have a `Null` value then taken an autoproperty. Autoproperties contain an ordered numbers.
 
 == Samples ==
 {{{
